@@ -13,4 +13,8 @@ class BizcommunityItem(scrapy.Item):
     event = scrapy.Field()
     location = scrapy.Field()
     
+class ElaItem(scrapy.Item):
+    title = scrapy.Field()
+    link = scrapy.Field()
+    date = scrapy.Field()
 
