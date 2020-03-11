@@ -1,4 +1,5 @@
 import scrapy
+import time
 from ..items import ElaItem
 
 class ElaSpider(scrapy.Spider):
@@ -18,3 +19,7 @@ class ElaSpider(scrapy.Spider):
             items['date'] = date
             yield items
 
+            next_page = response.css(".next::attr(href)")
+            if next_page:
+                url = response.urljoin(next_page[0].extract())
+                yield scrapy.Request(url, self.parse)
