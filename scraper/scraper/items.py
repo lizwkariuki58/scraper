@@ -18,3 +18,11 @@ class ElaItem(scrapy.Item):
     link = scrapy.Field()
     date = scrapy.Field()
 
+class JournalItem(scrapy.Item):
+    title = scrapy.Field()
+    authors = scrapy.Field()
+    # doi = scrapy.Field()
+    # purpose = scrapy.Field()
+    # design = scrapy.Field()
+    # findings = scrapy.Field()
+    # value = scrapy.Field()
